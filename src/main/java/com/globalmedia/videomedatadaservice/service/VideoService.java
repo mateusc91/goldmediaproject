@@ -45,30 +45,16 @@ public class VideoService {
     }
 
     @Transactional(readOnly = true)
-    public List<VideoDto> getVideosBySource(String source) {
-        return videoMapper.toDtoList(videoRepository.findBySource(source));
-    }
-
-    @Transactional(readOnly = true)
     public Page<VideoDto> getVideosBySource(String source, Pageable pageable) {
         Page<Video> videoPage = videoRepository.findBySource(source, pageable);
         return videoPage.map(videoMapper::toDto);
     }
 
-    @Transactional(readOnly = true)
-    public List<VideoDto> getVideosByUploadDateRange(LocalDate startDate, LocalDate endDate) {
-        return videoMapper.toDtoList(videoRepository.findByUploadDateBetween(startDate, endDate));
-    }
 
     @Transactional(readOnly = true)
     public Page<VideoDto> getVideosByUploadDateRange(LocalDate startDate, LocalDate endDate, Pageable pageable) {
         Page<Video> videoPage = videoRepository.findByUploadDateBetween(startDate, endDate, pageable);
         return videoPage.map(videoMapper::toDto);
-    }
-
-    @Transactional(readOnly = true)
-    public List<VideoDto> getVideosByDurationRange(Integer minDuration, Integer maxDuration) {
-        return videoMapper.toDtoList(videoRepository.findByDurationInSecondsBetween(minDuration, maxDuration));
     }
 
     @Transactional(readOnly = true)

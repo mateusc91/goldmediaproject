@@ -15,7 +15,6 @@ public class VideoStatisticsDto {
     
     private Map<String, Long> videoCountBySource;
     private Map<String, String> averageDurationBySource;
-    
-    // Total count across all sources
+
     private long totalVideos;
 }

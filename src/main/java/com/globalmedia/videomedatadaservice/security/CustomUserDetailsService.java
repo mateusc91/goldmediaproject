@@ -34,7 +34,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                     authorities
             );
         } catch (UsernameCredentialsNotFoundException ex) {
-            // Wrap our custom exception in the required UsernameNotFoundException
             throw new UsernameNotFoundException(ex.getMessage(), ex);
         }
     }
