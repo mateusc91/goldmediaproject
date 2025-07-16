@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.globalmedia</groupId>
-    <artifactId>videomedatadaservice</artifactId>
+    <artifactId>videometadataservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>videomedatadaservice</name>
     <description>videomedatadaservice</description>
